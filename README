@@ -1,0 +1,74 @@
+# Hotel Search Application
+
+This project is a Hotel Search Application built using React and TypeScript. It allows users to search for hotels based on city, check-in and check-out dates, number of adults and children, and room type. The application fetches hotel data from an external API using Axios and displays the results in a responsive and user-friendly way.
+
+## Features
+- Search hotels by city, date range, number of adults, children, and room type
+- Display hotel search results with names, ratings, review counts, and vendor information
+- Retry logic for API requests in case of rate limiting (status code 429)
+- Responsive design for mobile and desktop devices
+
+## Technologies Used
+- React
+- TypeScript
+- Axios for API requests
+- CSS for responsive design
+
+## Project Structure
+```
+project-root
+├── src
+│   ├── components
+│   │   ├── CitySearch.tsx     # City search component
+│   │   ├── HotelResults.tsx   # Hotel results display component
+│   │   └── HotelSearchApp.tsx # Main hotel search application
+│   ├
+│   │  
+│   └── App.tsx               # Main entry point
+├── public
+│   └── index.html
+├── package.json
+└── README.md
+```
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/hotel-search-app.git
+   cd hotel-search-app
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## Usage
+1. Enter the city ID, check-in and check-out dates, number of adults, children, and room type.
+2. Click the **Search Hotels** button to view available hotels.
+3. The results will display hotel names, ratings, review counts, and vendor information.
+
+## API Configuration
+The application uses the Makcorps API to fetch hotel data. The API key is configured in the `fetchHotels` function located in `src/api/hotelService.ts`.
+
+### Handling API Rate Limiting
+If the API request limit is exceeded (status code 429), the application will retry the request up to three times with a delay between each attempt.
+
+## Troubleshooting
+If you encounter the error:
+```
+Error fetching hotels: Request failed with status code 429
+```
+This means the API rate limit has been exceeded. The application will automatically retry, but if the problem persists, consider:
+- Waiting for some time before trying again.
+- Reducing the frequency of your search requests.
+
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgments
+Special thanks to Makcorps for providing the hotel data API.
+
